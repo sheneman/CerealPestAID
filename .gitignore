@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+data/
+models/*.pth
+models/*.onnx
+models/*.tflite
+*.out
+.DS_Store
