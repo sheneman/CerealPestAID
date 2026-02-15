@@ -2,6 +2,10 @@
 
 Training and evaluation of deep learning models for cereal pest identification (26 species).
 
+- **Project Website:** [cerealpestaid.net](https://cerealpestaid.net)
+- **Models (HuggingFace):** [sheneman/CerealPestAID](https://huggingface.co/sheneman/CerealPestAID)
+- **Dataset (HuggingFace):** [sheneman/CerealPestAID-dataset](https://huggingface.co/datasets/sheneman/CerealPestAID-dataset)
+
 ## Overview
 
 CerealPestAID provides trained deep learning classifiers for identifying 26 species of cereal crop pests from images. Three model architectures are compared: **EfficientNet-B6**, **MobileNetV3-Large**, and **InceptionV3**. Pre-trained model weights are available in PyTorch, ONNX, and TFLite formats.
@@ -10,42 +14,45 @@ CerealPestAID provides trained deep learning classifiers for identifying 26 spec
 
 The dataset contains labeled images of 26 cereal pest species organized into train/val/test splits using `torchvision.datasets.ImageFolder` conventions (one subdirectory per class).
 
-| Split | Samples |
-|-------|---------|
-| Train | ~80%    |
-| Val   | ~10%    |
-| Test  | 2,381   |
+| Split | Images |
+|-------|-------:|
+| Train | 37,699 |
+| Validation | 7,056 |
+| Test | 2,381 |
+| **Total** | **47,136** |
 
 **26 Classes:**
 
-| Index | Species |
-|-------|---------|
-| 0 | Cabbage seedpod weevil |
-| 1 | Bird cherry oat aphid |
-| 2 | Cabbage aphid |
-| 3 | Cereal grass aphid |
-| 4 | Cereal leaf beetle |
-| 5 | Clickbeetles / wireworms |
-| 6 | Crucifer flea beetle |
-| 7 | Cutworms |
-| 8 | Diamondback moth |
-| 9 | English grain aphid |
-| 10 | Greenbug |
-| 11 | Green peach aphid |
-| 12 | Hessian fly |
-| 13 | Lygus bug |
-| 14 | Non-pest herbivores |
-| 15 | Occasional pest |
-| 16 | Pea aphid |
-| 17 | Pea leaf weevil |
-| 18 | Pea weevil |
-| 19 | Predators |
-| 20 | Rose grain aphid |
-| 21 | Russian wheat aphid |
-| 22 | Stink bug |
-| 23 | Striped flea beetle |
-| 24 | Turnip aphid |
-| 25 | Wheathead armyworm (*Dargida diffusa*) |
+![Class Distribution](results/class_distribution.png)
+
+| Index | Species | Train | Val | Test | Total |
+|:-----:|---------|------:|----:|-----:|------:|
+| 0 | Cabbage seedpod weevil | 490 | 91 | 32 | 613 |
+| 1 | Bird cherry oat aphid | 517 | 97 | 33 | 647 |
+| 2 | Cabbage aphid | 1,538 | 288 | 97 | 1,923 |
+| 3 | Cereal grass aphid | 446 | 83 | 29 | 558 |
+| 4 | Cereal leaf beetle | 1,068 | 200 | 68 | 1,336 |
+| 5 | Clickbeetles / wireworms | 1,644 | 307 | 104 | 2,055 |
+| 6 | Crucifer flea beetle | 250 | 46 | 17 | 313 |
+| 7 | Cutworms | 7,842 | 1,470 | 491 | 9,803 |
+| 8 | Diamondback moth | 6,496 | 1,218 | 406 | 8,120 |
+| 9 | English grain aphid | 1,053 | 197 | 67 | 1,317 |
+| 10 | Greenbug | 52 | 9 | 4 | 65 |
+| 11 | Green peach aphid | 305 | 57 | 20 | 382 |
+| 12 | Hessian fly | 106 | 19 | 8 | 133 |
+| 13 | Lygus bug | 3,452 | 647 | 216 | 4,315 |
+| 14 | Non-pest herbivores | 220 | 41 | 15 | 276 |
+| 15 | Occasional pest | 972 | 182 | 61 | 1,215 |
+| 16 | Pea aphid | 285 | 53 | 19 | 357 |
+| 17 | Pea leaf weevil | 2,492 | 467 | 157 | 3,116 |
+| 18 | Pea weevil | 372 | 69 | 24 | 465 |
+| 19 | Predators | 1,952 | 366 | 123 | 2,441 |
+| 20 | Rose grain aphid | 104 | 19 | 7 | 130 |
+| 21 | Russian wheat aphid | 145 | 27 | 10 | 182 |
+| 22 | Stink bug | 5,005 | 938 | 314 | 6,257 |
+| 23 | Striped flea beetle | 278 | 52 | 18 | 348 |
+| 24 | Turnip aphid | 47 | 8 | 4 | 59 |
+| 25 | Wheathead armyworm (*Dargida diffusa*) | 568 | 105 | 37 | 710 |
 
 The dataset is available on HuggingFace: [sheneman/CerealPestAID-dataset](https://huggingface.co/datasets/sheneman/CerealPestAID-dataset)
 
@@ -186,15 +193,23 @@ Each model is available in three formats:
 
 ## Links
 
+- **Project Website:** [cerealpestaid.net](https://cerealpestaid.net)
 - **Models (HuggingFace):** [sheneman/CerealPestAID](https://huggingface.co/sheneman/CerealPestAID)
 - **Dataset (HuggingFace):** [sheneman/CerealPestAID-dataset](https://huggingface.co/datasets/sheneman/CerealPestAID-dataset)
 
-## Author
+## Acknowledgments
 
-Luke Sheneman
-Institute for Interdisciplinary Data Sciences (IIDS)
-University of Idaho
-sheneman@uidaho.edu
+This project, titled "Harnessing Artificial Intelligence for Implementing Integrated Pest Management in Small-Grain Production Systems," is funded under the U.S. Department of Agriculture No. 2021-67021-34253.
+
+## Team
+
+- **[Sanford Eigenbrode](https://www.uidaho.edu/cals/entomology-plant-pathology-and-nematology/our-people/sanford-eigenbrode)** - Distinguished Professor, Entomology, Plant Pathology, and Nematology, University of Idaho (PI)
+- **[Arash Rashed](https://www.arec.vaes.vt.edu/arec/southern-piedmont/people/arash-rashed.html)** - Virginia Tech Southern Piedmont Agricultural Research and Extension Center
+- **[Marek Borowiec](https://agsci.colostate.edu/directory/bio/?user=1189)** - Assistant Professor, Insect Systematist, Director of C. P. Gillette Museum, Colorado State University
+- **[Subodh Adhikari](https://extension.usu.edu/directory/adhikari-subodh)** - Assistant Professor, Entomology Extension Specialist, Utah State University
+- **[Luke Sheneman](https://hpc.uidaho.edu)** - Director of Research Computing, University of Idaho
+- **[Jennifer Hinds](https://hpc.uidaho.edu)** - Research Applications Architect, University of Idaho
+- **[John Brunsfeld](https://hpc.uidaho.edu)** - Senior Full Stack Developer, University of Idaho
 
 ## License
 
