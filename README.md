@@ -6,6 +6,10 @@ Training and evaluation of deep learning models for cereal pest identification (
 - **Models (HuggingFace):** [sheneman/CerealPestAID](https://huggingface.co/sheneman/CerealPestAID)
 - **Dataset (HuggingFace):** [sheneman/CerealPestAID-dataset](https://huggingface.co/datasets/sheneman/CerealPestAID-dataset)
 
+### Mobile App
+
+[![Download on the App Store](https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white)](https://apps.apple.com/us/app/identify-cereal-pests/id6737237141) [![Get it on Google Play](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.iids.rcds.cereal_pests_app_v2)
+
 ## Overview
 
 CerealPestAID provides trained deep learning classifiers for identifying 26 species of cereal crop pests from images. Three model architectures are compared: **EfficientNet-B6**, **MobileNetV3-Large**, and **InceptionV3**. Pre-trained model weights are available in PyTorch, ONNX, and TFLite formats.
