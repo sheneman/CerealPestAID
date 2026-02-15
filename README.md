@@ -78,7 +78,23 @@ Evaluated on the held-out test set (2,381 samples):
 
 ## Training Details
 
-All models were trained with the following configuration:
+All models were trained on the University of Idaho RCDS HPC cluster using SLURM with CUDA 11.8.
+
+### Hardware and Training Runs
+
+| Model | GPU | Epochs Completed | Wall Time | Best Checkpoint Epoch |
+|-------|-----|:----------------:|:---------:|:---------------------:|
+| EfficientNet-B6 | NVIDIA RTX 3090 (24 GB) | 10 | ~5h 47m | 1 |
+| InceptionV3 | NVIDIA RTX 4090 (24 GB) | 51 | ~6h 02m | 4 |
+| MobileNetV3-Large | NVIDIA RTX 4090 (24 GB) | 79 | ~6h 04m | 5 |
+
+Best model checkpoints were saved based on minimum validation loss. All runs were terminated by the SLURM wall time limit; subsequent epochs showed increasing validation loss (overfitting), confirming early checkpoint selection was appropriate.
+
+### Training Curves
+
+![Training Curves](results/training_curves.png)
+
+### Hyperparameters
 
 - **Optimizer:** Adam (lr=1e-4)
 - **LR Schedule:** ReduceLROnPlateau (factor=0.9, patience=5)
@@ -87,7 +103,6 @@ All models were trained with the following configuration:
 - **Loss:** CrossEntropyLoss
 - **Class balancing:** WeightedRandomSampler (inverse class frequency)
 - **Input resolution:** 528x528 (resize to 572, then crop)
-- **Hardware:** NVIDIA GPU via SLURM (CUDA 11.8)
 
 ### Data Augmentation (training)
 - RandomResizedCrop (528, scale 0.6-1.0)
